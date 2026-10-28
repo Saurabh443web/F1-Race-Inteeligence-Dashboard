@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formula 1 Race Intelligence</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav><a class="logo" href="#top"><b>F1</b>RACE INTELLIGENCE</a>
+<ul><li><a href="#overview">Overview</a></li><li><a href="#dimensions">Dimensions</a></li><li><a href="#dashboard">Dashboard</a></li><li><a href="#story">Story</a></li><li><a href="#drivers">Drivers</a></li></ul></nav>
+
+<header class="hero" id="top"><div>
+<h1>Formula 1<span>Race Intelligence Dashboard</span></h1>
+<p>Seventeen seasons of Grand Prix results, 2010 to 2026: driver performance, team strength, circuits and reliability, built from the Tableau race analysis project.</p>
+<a class="btn red" href="#dashboard">View dashboard</a><a class="btn" href="#story">Explore story</a>
+<div class="stats"><div><b>17</b><small>Seasons</small></div><div><b>6,464</b><small>Race outcomes</small></div><div><b>10</b><small>Teams</small></div><div><b>29</b><small>Circuits</small></div></div>
+</div></header>
+
+<section id="overview">
+<h2>From raw race data to championship insight</h2>
+<p class="lead">The project joins five tables (race results, qualifying, lap intelligence, circuits and championship standings) so every chart can answer who won, where, and why.</p>
+<div class="grid">
+<div class="card"><h3>Race results</h3><p>Finish and grid positions, points, podiums, DNFs, fastest laps and positions gained for every driver entry.</p></div>
+<div class="card"><h3>Qualifying</h3><p>Q1 lap times, gap to pole and pole positions across circuits and seasons.</p></div>
+<div class="card"><h3>Lap intelligence</h3><p>Lap times, pit laps, DRS activity and overtakes, with air temperature and humidity.</p></div>
+<div class="card"><h3>Circuits and standings</h3><p>Length, altitude, direction and type for each track, plus champions and season points.</p></div>
+</div></section>
+
+<section id="dimensions">
+<h2>Intelligence dimensions</h2>
+<p class="lead">Six angles the dashboard uses to read a season.</p>
+<div class="grid">
+<div class="card"><h3>Circuit analysis</h3><p>Compare 29 circuits by country, city, type, length and altitude.</p><em>29 circuits mapped</em></div>
+<div class="card"><h3>Lap time breakdown</h3><p>Follow pace through qualifying, race laps and pit laps.</p><em>Lap time and gap to leader</em></div>
+<div class="card"><h3>Pit stop strategy</h3><p>Average pit stop time, overcut attempts and positions gained.</p><em>Pit stops per race</em></div>
+<div class="card"><h3>Driver head-to-head</h3><p>Compare drivers on points, podiums, poles and laps led.</p><em>Top N filter</em></div>
+<div class="card"><h3>Reliability</h3><p>DNF rate split by reason across every driver.</p><em>DNF rate by reason</em></div>
+<div class="card"><h3>Weather</h3><p>See how wet races, air temperature and humidity shaped results.</p><em>Wet race flag</em></div>
+</div></section>
+
+<section id="dashboard">
+<h2>Race Intelligence Dashboard</h2>
+<p class="lead">Change the Top N slider to see how the leaderboard reshapes.</p>
+<div class="dash">
+<div class="kpis"><div><b>10</b><small>Competing teams</small></div><div><b>17</b><small>Seasons in play</small></div><div><b>6,464</b><small>Race outcomes logged</small></div><div><b>29</b><small>Circuits showcased</small></div></div>
+<div class="panels">
+<div class="panel"><h3>Driver performance leaderboard (career points)</h3>
+<div class="ctl"><label for="n">Top N</label><input id="n" type="range" min="3" max="7" value="7"><output id="nv">7</output></div>
+<div id="dl"></div></div>
+<div class="panel"><h3>Team performance ranking</h3><div id="tl"></div></div>
+<div class="panel"><h3>Race entries by country (as shown on the map)</h3><div id="cl"></div></div>
+<div class="panel"><h3>Circuits showcased</h3><input type="search" id="q" placeholder="Search circuits" aria-label="Search circuits"><div class="chips" id="cc"></div></div>
+</div>
+<p class="note">Driver points and country counts are the values read from the published dashboard. Team bars show relative order.</p>
+</div></section>
+
+<section id="story">
+<h2>From global overview to championship success</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="dash" id="sp"></div></section>
+
+<section id="drivers">
+<h2>Drivers and teams in the data</h2>
+<p class="lead">Everyone who appears in the race results extract.</p>
+<div class="grid"><div class="card"><h3>Drivers</h3><div class="chips" id="dr"></div></div><div class="card"><h3>Teams</h3><div class="chips" id="tm"></div></div></div>
+</section>
+<footer>Formula 1 Race Intelligence · Data: F1 race analysis Tableau project, 2010–2026</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
